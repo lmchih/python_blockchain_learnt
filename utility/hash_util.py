@@ -21,7 +21,7 @@ def hash_block(block):
     # hashable_block = block.__dict__.copy()
     # print(hashable_block)
     hashable_block = block.__dict__.copy()
-    print(hashable_block)
+    # print(hashable_block)
     hashable_block['transactions'] = [tx.to_ordered_dict()
                                       for tx in hashable_block['transactions']]
     # sha256 only takes string as input
