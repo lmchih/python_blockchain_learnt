@@ -13,7 +13,7 @@ def hash_string_256(string):
 
 
 def hash_block(block):
-    """ Hashes a block and returns a string representation of it. 
+    """ Hashes a block and returns a string representation of it.
 
     Arguments:
         :block: The block that should be hashed.
