@@ -16,7 +16,8 @@ class Node:
         return user_input
 
     def get_transection_value(self):
-        """ Returns the input of the user (a new transaction amount) as a float. """
+        """ Returns the input of the user (a new transaction amount) as a
+        float. """
         tx_recipient = input('Enter the recipient of the transaction: ')
         tx_amount = float(input('Your transaction amount please: '))
         return (tx_recipient, tx_amount)
@@ -46,8 +47,11 @@ class Node:
                 tx_data = self.get_transection_value()
                 recipient, amount = tx_data  # pull out the elements of tuple
                 # Add the transaction amount to the blockchain
-                signature = self.wallet.sign_transaction(self.wallet.public_key, recipient, amount)
-                if self.blockchain.add_transaction(recipient, self.wallet.public_key, signature, amount=amount):
+                signature = self.wallet.sign_transaction(
+                    self.wallet.public_key, recipient, amount)
+                if self.blockchain.add_transaction(recipient,
+                                                   self.wallet.public_key,
+                                                   signature, amount=amount):
                     print('Added transaction! {}'.format(
                         self.blockchain.get_open_transactions()
                     ))
@@ -60,7 +64,9 @@ class Node:
                 # Output the blockchain list to the console
                 self.print_blockchain_elements()
             elif user_choice == '4':
-                if Verification.verify_transactions(self.blockchain.get_open_transactions(), self.blockchain.get_balance):
+                if Verification.verify_transactions(
+                        self.blockchain.get_open_transactions(),
+                        self.blockchain.get_balance):
                     print('All transactions are valid.')
                 else:
                     print('There are invalid transactions!')
