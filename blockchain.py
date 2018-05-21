@@ -12,14 +12,14 @@ from utility.verification import Verification
 from utility.hash_util import hash_block, hash_string_256
 
 
-# Initializing our blockchain list
-MINING_REWARD = 10  # should be given to the people who mined the block
-
 """ python store the name of the module in __name__ """
-# print(__name__)
+#  MINING_REWARD = 10  # should be given to the people who mined the block
 
 
 class Blockchain:
+
+    MINING_REWARD = 10  # should be given to the people who mined the block
+
     def __init__(self, public_key, node_id):
         # Our starting block for blockchain
         genesis_block = Block(0, '', [], 100, 0)
@@ -201,7 +201,7 @@ class Blockchain:
         #     'amount': MINING_REWARD
         # }
         reward_transaction = Transaction(
-            'MINING', self.public_key, '', MINING_REWARD)
+            'MINING', self.public_key, '', self.MINING_REWARD)
         # range selector to make a copy
         copied_transactions = self.__open_transactions[:]
         for tx in copied_transactions:
