@@ -1,2 +1,2 @@
 # python_blockchain_learnt
-course learnt from Udemy
+course on Udemy taught by Maximilian Schwarzmüller
